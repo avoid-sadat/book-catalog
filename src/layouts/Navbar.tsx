@@ -28,6 +28,9 @@ export default function Navbar() {
           <li>
             <Link to="/products">Products</Link>
           </li>
+          <li>
+            <Link to="/addproduct">Add New Products</Link>
+          </li>
         </ul>
       </div>
       <div className="flex-none gap-2">

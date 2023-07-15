@@ -7,6 +7,8 @@ import ProductDetails from "../pages/ProductDetails";
 
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
+import AddProduct from "../pages/AddProduct";
+
 const routes = createBrowserRouter([
 
   {
@@ -22,9 +24,14 @@ const routes = createBrowserRouter([
     element:<Product/>
   },
   {
+    path:'/addproduct',
+    element:<AddProduct/>
+  },
+  {
     path:'/product-details/:id',
     element:<ProductDetails/>
   },
+ 
   {
     path:'/login',
     element:<Login/>
