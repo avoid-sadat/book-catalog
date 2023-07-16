@@ -89,7 +89,7 @@ export default function ProductDetails() {
           </div>
         </div>
       </div>
-      <ProductReview />
+      <ProductReview id={id!}/>
       
     </>
   );

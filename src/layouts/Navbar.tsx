@@ -70,10 +70,10 @@ export default function Navbar() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/products">Products</Link>
+            <Link to="/products">All Book</Link>
           </li>
           <li>
-            <Link to="/addproduct">Add New Products</Link>
+            <Link to="/addproduct">Add Book</Link>
           </li>
         </ul>
       </div>

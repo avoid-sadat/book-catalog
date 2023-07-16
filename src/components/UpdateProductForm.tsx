@@ -51,28 +51,28 @@ console.log(isSuccess)
   };
 
   return (
-    <div>
+    <div className='flex justify-center mb-4'>
       {isLoading ? (
         <p>Loading...</p>
       ) : error ? (
         <p>Error loading product details.</p>
       ) : (
         <form onSubmit={handleSubmit}>
-          <div>
+          <div className='flex justify-center mb-4'>
             <label htmlFor="title">Title:</label>
-            <input name="title" onChange={handleChange} value={inputValues.title} />
+            <input name="title" className='text-center' onChange={handleChange} value={inputValues.title} />
           </div>
-          <div>
+          <div className='flex justify-center mb-4'>
             <label htmlFor="author">Author:</label>
-            <input name="author" onChange={handleChange} value={inputValues.author} />
+            <input name="author" className='text-center' onChange={handleChange} value={inputValues.author} />
           </div>
-          <div>
+          <div className='flex justify-center mb-4'>
             <label htmlFor="genre">Genre:</label>
-            <input name="genre" onChange={handleChange} value={inputValues.genre} />
+            <input name="genre" className='text-center' onChange={handleChange} value={inputValues.genre} />
           </div>
-          <div>
+          <div className='flex justify-center mb-4'>
             <label htmlFor="published_date">Published Date:</label>
-            <input name="published_date" onChange={handleChange} value={inputValues.published_date} />
+            <input name="published_date" className='text-center' onChange={handleChange} value={inputValues.published_date} />
           </div>
           <button type="submit">Update Product</button>
         </form>

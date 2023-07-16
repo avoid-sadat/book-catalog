@@ -50,21 +50,21 @@ export default function AddProductForm() {
   };
 
   return (
-    <div>
+    <div className='flex justify-center'>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className='flex justify-center mb-4'>
           <label htmlFor="title">Title:</label>
           <input name="title" onChange={handleChange} value={inputValues.title} />
         </div>
-        <div>
+        <div className='flex justify-center mb-4'>
           <label htmlFor="author">Author:</label>
           <input name="author" onChange={handleChange} value={inputValues.author} />
         </div>
-        <div>
+        <div className='flex justify-center mb-4'>
           <label htmlFor="genre">Genre:</label>
           <input name="genre" onChange={handleChange} value={inputValues.genre} />
         </div>
-        <div>
+        <div className='flex justify-center mb-4'>
           <label htmlFor="published_date">Published Date:</label>
           <input
             name="published_date"

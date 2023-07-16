@@ -18,7 +18,6 @@ export default function ProductCart({ product }: IProps) {
       <p>Genere :{product.genre}</p>
       <p>Published Date:{product.published_date}</p>
       <div className="card-actions justify-end">
-        <button className="btn">ADD Now</button>
       </div>
     </div>
   </div>
