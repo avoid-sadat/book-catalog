@@ -46,9 +46,10 @@ import * as React from 'react';
 
 
 import  {useForm}  from 'react-hook-form';
-import { useAppDispatch } from '../redux/hook';
+import { useAppDispatch, useAppSelector } from '../redux/hook';
 import { createUser } from '../redux/feature/user/userSlice';
 import Navbar from '../layouts/Navbar';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 type UserAuthFormProps = React.HTMLAttributes<HTMLDivElement>;
@@ -65,12 +66,22 @@ export function SignupForm({ className, ...props }: UserAuthFormProps) {
     formState: { errors },
   } = useForm<SignupFormInputs>();
   
+
+  const {user,isLoading} = useAppSelector((state)=>state.user)
   const dispatch = useAppDispatch()
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  const from = location?.state?.from?.pathname || '/'
 
   const onSubmit = (data: SignupFormInputs) => {
     console.log(data);
     dispatch(createUser({email:data.email,password:data.password}))
   };
+  React.useEffect(()=>{
+    if(user.email && !isLoading)
+    navigate(from,{replace:true})
+  },[user.email,isLoading,navigate,from])
 
   return (
     <>

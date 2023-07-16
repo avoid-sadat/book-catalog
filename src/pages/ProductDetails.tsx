@@ -95,19 +95,9 @@ export default function ProductDetails() {
                 <Link to={`/updateproduct/${id}`}>Edit Book</Link>
               </button>
             ) : (
-              <p>Sorry You Can't delete or edit the book</p>
+              <p>Sorry You Can't delete or edit the book.Plz Sign in</p>
             )}
 
-            {/* <button className="btn" onClick={handleDeleteProduct} >
-             Delete Book
-            </button> */}
-            {/* {user.email && bookDeleted ? (
-              <p>Book has been deleted.</p>
-            ) : (
-              <button className="btn" onClick={handleDeleteProduct}>
-                Delete Book
-              </button>
-            )} */}
             {user.email === product?.email && !bookDeleted && (
               <button className="btn" onClick={handleDeleteProduct}>
                 Delete Book
