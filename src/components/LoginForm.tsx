@@ -75,7 +75,7 @@ export default function LoginForm({ className, ...props }: UserAuthFormProps) {
             <label className="sr-only" htmlFor="email">
               Email
             </label>
-            <input
+            <input className="input input-bordered input-secondary w-full max-w-xs"
               id="email"
               placeholder="name@example.com"
               type="email"
@@ -85,7 +85,7 @@ export default function LoginForm({ className, ...props }: UserAuthFormProps) {
               {...register('email', { required: 'Email is required' })}
             />
             {errors.email && <p>{errors.email.message}</p>}
-            <input
+            <input className="input input-bordered input-secondary w-full max-w-xs"
               id="password"
               placeholder="your password"
               type="password"
@@ -95,27 +95,27 @@ export default function LoginForm({ className, ...props }: UserAuthFormProps) {
             />
             {errors.password && <p>{errors.password.message}</p>}
           </div>
-          <button>Login with email</button>
+          <button className="btn btn-active btn-accent">Login with email</button>
         </div>
       </form>
       <div className="relative">
         <div className="absolute inset-0 flex items-center">
-          <span className="w-full border-t" />
+          {/* <span className="w-full border-t" /> */}
         </div>
-        <div className="relative flex justify-center text-xs uppercase">
+        {/* <div className="relative flex justify-center text-xs uppercase">
           <span className="bg-background px-2 text-muted-foreground">
             Or continue with
           </span>
-        </div>
+        </div> */}
       </div>
-      <button
+      {/* <button
       
         type="button"
         className="flex items-center justify-between"
       >
-        <p>Google</p>
         
-      </button>
+        
+      </button> */}
     </div>
    
     </>

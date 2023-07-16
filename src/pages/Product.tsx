@@ -6,7 +6,10 @@ import { useGetProductsQuery } from "../redux/feature/product/apiSlice";
 import ProductCart from "./ProductCart";
 
 export default function Product() {
-  const { data, isLoading, error } = useGetProductsQuery(undefined);
+  const { data, isLoading, error } = useGetProductsQuery(undefined,{
+    refetchOnMountOrArgChange: true,
+    pollingInterval: 30000,
+  });
   console.log(error);
   console.log(data);
   return (

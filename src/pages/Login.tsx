@@ -7,12 +7,12 @@ import Footer from '../layouts/Footer'
 export default function Login() {
   return (
     <>
-   
+   <Navbar/>
     <div className="container relative hidden h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
-      <Link
+      {/* <Link
         to={"/signup"}>
         Signup
-      </Link>
+      </Link> */}
       <div className="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
         <div
           className="absolute inset-0 bg-cover"
@@ -41,7 +41,7 @@ export default function Login() {
             </p>
           </div>
           <LoginForm />
-          <p className="px-8 text-center text-sm text-muted-foreground">
+          {/* <p className="px-8 text-center text-sm text-muted-foreground">
             By clicking continue, you agree to our{' '}
             <Link
               to="/terms"
@@ -57,11 +57,11 @@ export default function Login() {
               Privacy Policy
             </Link>
             .
-          </p>
+          </p> */}
         </div>
       </div>
     </div>
-    
+    <Footer/>
   </>
   )
 }

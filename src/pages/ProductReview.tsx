@@ -1,13 +1,6 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { useGetCommentQuery, usePostCommentMutation } from "../redux/feature/product/apiSlice";
 
-
-const dummyComments = [
-  'Bhalo na',
-  'Ki shob ghori egula??',
-  'Eta kono product holo ??',
-  '200 taka dibo, hobe ??',
-];
 interface IProps {
   id: string;
 }

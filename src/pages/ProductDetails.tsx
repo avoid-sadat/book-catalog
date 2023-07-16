@@ -43,30 +43,34 @@ import {
 import { Link, useParams } from "react-router-dom";
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
-import { useAppDispatch } from "../redux/hook";
+import { useAppDispatch, useAppSelector } from "../redux/hook";
+import { auth } from "../lib/firebase";
 
 export default function ProductDetails() {
+  const { user } = useAppSelector((state) => state.user);
+
   const [bookDeleted, setBookDeleted] = useState(false);
   const { id } = useParams<{ id: string }>();
   const { data: product, isLoading, error } = useGetProductDetailsQuery(id);
+  console.log(product);
   const [deleteProduct, { isLoading: isload, isError, isSuccess }] =
     useDeleteProductMutation();
   console.log(isload);
   console.log(isError);
   console.log(isSuccess);
 
-  const handleDeleteProduct = () => {
+  const handleDeleteProduct = async () => {
     const confirmed = window.confirm(
       "Are you sure you want to delete this book?"
     );
     if (confirmed) {
-      if (id) {
-        deleteProduct(id);
+      try {
+        await deleteProduct(id);
+        setBookDeleted(true);
+      } catch (error) {
+        console.log("Error deleting the book:", error);
       }
-      setBookDeleted(true);
     }
-
-    console.log(id);
   };
 
   return (
@@ -84,20 +88,32 @@ export default function ProductDetails() {
           <ul className="space-y-1 text-2xl">
             Published Date: {product?.published_date}
           </ul>
+
           <div className="card-actions justify-center">
-            <button className="btn">
-              <Link to={`/updateproduct/${id}`}>Edit Book</Link>
-            </button>
+            {user.email === product?.email ? (
+              <button className="btn">
+                <Link to={`/updateproduct/${id}`}>Edit Book</Link>
+              </button>
+            ) : (
+              <p>Sorry You Can't delete or edit the book</p>
+            )}
+
             {/* <button className="btn" onClick={handleDeleteProduct} >
              Delete Book
             </button> */}
-            {bookDeleted ? (
+            {/* {user.email && bookDeleted ? (
               <p>Book has been deleted.</p>
             ) : (
               <button className="btn" onClick={handleDeleteProduct}>
                 Delete Book
               </button>
+            )} */}
+            {user.email === product?.email && !bookDeleted && (
+              <button className="btn" onClick={handleDeleteProduct}>
+                Delete Book
+              </button>
             )}
+            {bookDeleted && <p>Book has been deleted.</p>}
           </div>
         </div>
       </div>

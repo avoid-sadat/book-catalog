@@ -10,6 +10,7 @@ import SignUp from "../pages/SignUp";
 import AddProduct from "../pages/AddProduct";
 import UpdateProduct from "../pages/UpdateProduct";
 import SearchResult from "../pages/SearchResult";
+import PrivateRoute from "./privateRoutes";
 
 const routes = createBrowserRouter([
 
@@ -32,11 +33,15 @@ const routes = createBrowserRouter([
     },
     {
       path:'/addproduct',
-      element:<AddProduct/>
+      element:<PrivateRoute>
+        <AddProduct/>
+        </PrivateRoute>
     },
     {
       path:'/updateproduct/:id',
-      element:<UpdateProduct/>
+      element:<PrivateRoute>
+        <UpdateProduct/>
+      </PrivateRoute>
     },
     {
       path:'/product-details/:id',
