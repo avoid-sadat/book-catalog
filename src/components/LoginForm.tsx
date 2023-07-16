@@ -37,7 +37,7 @@ export default function LoginForm({ className, ...props }: UserAuthFormProps) {
     navigate(from,{replace:true})
   },[user.email,isLoading,navigate,from])
   return (
-    <><Navbar />
+    <>
     {/* <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
@@ -117,7 +117,7 @@ export default function LoginForm({ className, ...props }: UserAuthFormProps) {
         
       </button>
     </div>
-   <Footer/>
+   
     </>
   )
 }

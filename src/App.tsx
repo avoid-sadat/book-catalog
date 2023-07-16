@@ -4,6 +4,7 @@ import { useAppDispatch } from "./redux/hook"
 import { setLoading, setUser } from "./redux/feature/user/userSlice"
 import { onAuthStateChanged } from "firebase/auth"
 import { auth } from "./lib/firebase"
+import { Toast } from "./components/ui/Toaster"
 
 function App() {
   const dispatch = useAppDispatch()
@@ -23,6 +24,7 @@ function App() {
     <div>
     <MainLayout />
   </div>
+
   )
 }
 

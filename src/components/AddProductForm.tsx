@@ -1,10 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { ChangeEvent, FormEvent, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useAppDispatch } from '../redux/hook';
-import { IProduct } from '../types/globalTypes';
 import { useAddProductMutation } from '../redux/feature/product/apiSlice';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from './ui/use-toast';
+
 
 interface FormData {
   title: string;
@@ -39,7 +38,7 @@ export default function AddProductForm() {
       genre: '',
       published_date: '',
     });
-    toast.success('Book added successfully');
+   alert("Book added successfully")
   };
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {

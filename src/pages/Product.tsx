@@ -11,13 +11,13 @@ export default function Product() {
   console.log(data);
   return (
     <>
-      <Navbar />
+     
       <div className="col-span-9 grid grid-cols-3 gap-10 pb-20">
         {data?.data.map((product: IProduct) => (
           <ProductCart product={product} />
         ))}
       </div>
-      <Footer />
+      
     </>
   );
 }

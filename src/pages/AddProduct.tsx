@@ -8,9 +8,7 @@ import AddProductForm from '../components/AddProductForm'
 export default function AddProduct() {
   return (
     <>
-    <Navbar/>
     <AddProductForm/>
-    <Footer/>
   </>
   )
 }

@@ -17,7 +17,20 @@ export const api = createApi({
         body:data
       })
     }),
+    deleteProduct:builder.mutation({
+      query:(id)=>({
+        url:`/product/${id}`,
+        method:'DELETE'
+      })
+    }),
+    updateProduct:builder.mutation({
+      query:({id,data})=>({
+        url:`/product/${id}`,
+        method:'PATCH',
+        body:data
+      })
+    }),
   })
 })
 
-export const {useGetProductsQuery,useGetProductDetailsQuery,useAddProductMutation} = api
+export const {useGetProductsQuery,useGetProductDetailsQuery,useAddProductMutation,useDeleteProductMutation,useUpdateProductMutation} = api

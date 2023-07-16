@@ -8,29 +8,42 @@ import ProductDetails from "../pages/ProductDetails";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
 import AddProduct from "../pages/AddProduct";
+import UpdateProduct from "../pages/UpdateProduct";
+import SearchResult from "../pages/SearchResult";
 
 const routes = createBrowserRouter([
 
-  {
-    path:'/',
-    element:<App/>
-  },
-  {
-    path:'/home',
-    element:<Home/>
-  },
-  {
-    path:'/products',
-    element:<Product/>
-  },
-  {
-    path:'/addproduct',
-    element:<AddProduct/>
-  },
-  {
-    path:'/product-details/:id',
-    element:<ProductDetails/>
-  },
+{
+  path:'/',
+  element:<App/>,
+  children:[
+    {
+      index:true,
+      element:<Home/>
+    },
+
+    {
+      path:'/search',
+      element:<SearchResult product={undefined}/>
+    },
+    {
+      path:'/products',
+      element:<Product/>
+    },
+    {
+      path:'/addproduct',
+      element:<AddProduct/>
+    },
+    {
+      path:'/updateproduct/:id',
+      element:<UpdateProduct/>
+    },
+    {
+      path:'/product-details/:id',
+      element:<ProductDetails/>
+    },
+  ],
+},
  
   {
     path:'/login',
