@@ -4,6 +4,7 @@ interface Ifilter {
   author:string,
   genre:string,
   published_date:string
+ 
 }
 const initialState : Ifilter ={
   genre:'',
@@ -25,9 +26,12 @@ const filterSlice = createSlice({
     searchByTitle: (state, action:PayloadAction<string>) => {
       state.title = action.payload;
     },
+    searchByAuthor: (state, action:PayloadAction<string>) => {
+      state.author = action.payload;
+    },
   }
 })
 
-export const {setGenreFilter,setYearFilter,searchByTitle} = filterSlice.actions
+export const {setGenreFilter,setYearFilter,searchByTitle,searchByAuthor} = filterSlice.actions
 
 export default filterSlice.reducer

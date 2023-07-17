@@ -6,7 +6,7 @@ export const booksApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:5000' }),
   endpoints: (builder) => ({
     getBooks: builder.query({
-      query: ({genre,published_date,title}) => `/product?genre=${genre}&published_date=${published_date}&title=${title}`,
+      query: ({genre,published_date,title,author}) => `/product?genre=${genre}&published_date=${published_date}&title=${title}&author=${author}`,
       
     }),
   }),
