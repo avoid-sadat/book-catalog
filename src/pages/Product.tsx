@@ -1,6 +1,4 @@
-import React from "react";
-import Navbar from "../layouts/Navbar";
-import Footer from "../layouts/Footer";
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { IProduct } from "../types/globalTypes";
 import { useGetProductsQuery } from "../redux/feature/product/apiSlice";
 import ProductCart from "./ProductCart";
@@ -12,6 +10,7 @@ export default function Product() {
   });
   console.log(error);
   console.log(data);
+  console.log(isLoading);
   return (
     <>
      

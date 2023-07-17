@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // import React from 'react'
 // import ProductReview from './ProductReview'
 // import { useDeleteProductMutation, useGetProductDetailsQuery } from '../redux/feature/product/apiSlice'
@@ -34,17 +36,14 @@
 //   )
 // }
 
-import React, { useState } from "react";
+import { useState } from "react";
 import ProductReview from "./ProductReview";
 import {
   useDeleteProductMutation,
   useGetProductDetailsQuery,
 } from "../redux/feature/product/apiSlice";
 import { Link, useParams } from "react-router-dom";
-import Navbar from "../layouts/Navbar";
-import Footer from "../layouts/Footer";
-import { useAppDispatch, useAppSelector } from "../redux/hook";
-import { auth } from "../lib/firebase";
+import { useAppSelector } from "../redux/hook";
 
 export default function ProductDetails() {
   const { user } = useAppSelector((state) => state.user);
@@ -52,6 +51,8 @@ export default function ProductDetails() {
   const [bookDeleted, setBookDeleted] = useState(false);
   const { id } = useParams<{ id: string }>();
   const { data: product, isLoading, error } = useGetProductDetailsQuery(id);
+  console.log(isLoading);
+  console.log(error);
   console.log(product);
   const [deleteProduct, { isLoading: isload, isError, isSuccess }] =
     useDeleteProductMutation();

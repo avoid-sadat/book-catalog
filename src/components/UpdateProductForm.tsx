@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 import { useGetProductDetailsQuery, useUpdateProductMutation } from '../redux/feature/product/apiSlice';
 import { useParams } from 'react-router-dom';
 

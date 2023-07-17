@@ -11,6 +11,7 @@ import AddProduct from "../pages/AddProduct";
 import UpdateProduct from "../pages/UpdateProduct";
 import SearchResult from "../pages/SearchResult";
 import PrivateRoute from "./privateRoutes";
+import FilterOptions from "../pages/FilterOptions";
 
 const routes = createBrowserRouter([
 
@@ -47,9 +48,16 @@ const routes = createBrowserRouter([
       path:'/product-details/:id',
       element:<ProductDetails/>
     },
+    {
+      path:'/filter',
+      element:<FilterOptions/>
+    },
   ],
 },
- 
+{
+  path:'/filter',
+  element:<FilterOptions/>
+},
   {
     path:'/login',
     element:<Login/>

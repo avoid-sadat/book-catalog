@@ -8,7 +8,6 @@
 // }
 
 import { SignupForm } from "../components/SignUpForm";
-import { Link } from "react-router-dom";
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
 

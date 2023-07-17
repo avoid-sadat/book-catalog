@@ -1,4 +1,3 @@
-import React from 'react'
 import { IProduct } from '../types/globalTypes';
 import { Link } from 'react-router-dom';
 

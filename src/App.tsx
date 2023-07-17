@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { useEffect } from "react"
 import MainLayout from "./layouts/MainLayouts"
 import { useAppDispatch } from "./redux/hook"
 import { setLoading, setUser } from "./redux/feature/user/userSlice"
 import { onAuthStateChanged } from "firebase/auth"
 import { auth } from "./lib/firebase"
-import { Toast } from "./components/ui/Toaster"
 
 function App() {
   const dispatch = useAppDispatch()
