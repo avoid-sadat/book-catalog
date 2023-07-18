@@ -11,7 +11,7 @@ export default function BookList() {
     data: books,
     error,
     isLoading,
-  } = useGetBooksQuery({genre: genreFilter, published_date:yearFilter });
+  } = useGetBooksQuery({ genre: genreFilter, published_date: yearFilter });
   console.log(books);
   console.log(error);
   if (isLoading) {
@@ -23,23 +23,20 @@ export default function BookList() {
   }
 
   return (
-    <div>
-      <h2>Book List</h2>
+    <div className="col-span-9 grid grid-cols-3 gap-10 pb-20">
       {books &&
         books?.data.map((book: IProduct) => (
           <div className="card w-96 bg-base-100 shadow-xl image-full">
             <div className="card-body">
               <h2 className="card-title">{book.title}</h2>
-              <p>{book.author}</p>
+              <p>Author Name:{book.author}</p>
               <div className="card-actions justify-end">
-                <button className="btn btn-primary">{book.genre}</button>
+                <p>Book Genre:{book.genre}</p>
               </div>
+              <p>Publication Year:{book.genre}</p>
             </div>
           </div>
         ))}
-      {/* {books?.data.map((book: IProduct) => (
-          <BookDetails book={book} />
-        ))} */}
     </div>
   );
 }

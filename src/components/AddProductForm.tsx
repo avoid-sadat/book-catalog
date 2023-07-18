@@ -78,29 +78,29 @@ export default function AddProductForm() {
       <form onSubmit={handleSubmit}>
         <div className='flex justify-center mb-4'>
           <label htmlFor="title">Title:</label>
-          <input name="title" onChange={handleChange} value={inputValues.title} />
+          <input className="input input-bordered input-secondary w-full max-w-xs" name="title" onChange={handleChange} value={inputValues.title} />
         </div>
         <div className='flex justify-center mb-4'>
           <label htmlFor="author">Author:</label>
-          <input name="author" onChange={handleChange} value={inputValues.author} />
+          <input className="input input-bordered input-secondary w-full max-w-xs" name="author" onChange={handleChange} value={inputValues.author} />
         </div>
         <div className='flex justify-center mb-4'>
           <label htmlFor="genre">Genre:</label>
-          <input name="genre" onChange={handleChange} value={inputValues.genre} />
+          <input className="input input-bordered input-secondary w-full max-w-xs" name="genre" onChange={handleChange} value={inputValues.genre} />
         </div>
         <div className='flex justify-center mb-4'>
           <label htmlFor="published_date">Published Date:</label>
-          <input
+          <input className="input input-bordered input-secondary w-full max-w-xs"
             name="published_date"
             onChange={handleChange}
             value={inputValues.published_date}
           />
         </div>
         <div className='flex justify-center mb-4'>
-        <input type="hidden" name="email" onChange={handleChange} value={inputValues.email!} />
+        <input className="input input-bordered input-secondary w-full max-w-xs" type="hidden" name="email" onChange={handleChange} value={inputValues.email!} />
 
         </div>
-        <button type="submit">Add Product</button>
+        <button className="btn btn-active btn-accent" type="submit">Add Product</button>
       </form>
     </div>
   );

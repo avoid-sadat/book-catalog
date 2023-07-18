@@ -66,7 +66,7 @@ export default function LoginForm({ className, ...props }: UserAuthFormProps) {
             />
             {errors.password && <p>{errors.password.message}</p>}
           </div>
-          <button className="btn btn-active btn-accent">Login with email</button>
+          <button className="btn btn-active btn-accent">Login</button>
         </div>
       </form>
       <div className="relative">

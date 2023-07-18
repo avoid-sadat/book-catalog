@@ -11,65 +11,60 @@ import AddProduct from "../pages/AddProduct";
 import UpdateProduct from "../pages/UpdateProduct";
 import SearchResult from "../pages/SearchResult";
 import PrivateRoute from "./privateRoutes";
-import FilterOptions from "../pages/FilterOptions";
 
 const routes = createBrowserRouter([
-
-{
-  path:'/',
-  element:<App/>,
-  children:[
-    {
-      index:true,
-      element:<Home/>
-    },
-
-    {
-      path:'/search',
-      element:<SearchResult product={undefined}/>
-    },
-    {
-      path:'/products',
-      element:<Product/>
-    },
-    {
-      path:'/addproduct',
-      element:<PrivateRoute>
-        <AddProduct/>
-        </PrivateRoute>
-    },
-    {
-      path:'/updateproduct/:id',
-      element:<PrivateRoute>
-        <UpdateProduct/>
-      </PrivateRoute>
-    },
-    {
-      path:'/product-details/:id',
-      element:<ProductDetails/>
-    },
-    {
-      path:'/filter',
-      element:<FilterOptions/>
-    },
-  ],
-},
-{
-  path:'/filter',
-  element:<FilterOptions/>
-},
   {
-    path:'/login',
-    element:<Login/>
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+
+      {
+        path: "/search",
+        element: <SearchResult product={undefined} />,
+      },
+      {
+        path: "/products",
+        element: <Product />,
+      },
+      {
+        path: "/addproduct",
+        element: (
+          <PrivateRoute>
+            <AddProduct />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/updateproduct/:id",
+        element: (
+          <PrivateRoute>
+            <UpdateProduct />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/product-details/:id",
+        element: <ProductDetails />,
+      },
+    ],
+  },
+
+  {
+    path: "/login",
+    element: <Login />,
   },
   {
-    path:'/signup',
-    element:<SignUp/>
+    path: "/signup",
+    element: <SignUp />,
   },
   {
-    path:'*',
-    element:<Notfound/>
+    path: "*",
+    element: <Notfound />,
   },
-])
+]);
 
-export default routes
+export default routes;
