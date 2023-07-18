@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const booksApi = createApi({
   reducerPath: 'booksApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://book-server-iota.vercel.app' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://book-server-avoid-sadat.vercel.app' }),
   endpoints: (builder) => ({
     getBooks: builder.query({
       query: ({genre,published_date,title,author}) => `/product?genre=${genre}&published_date=${published_date}&title=${title}&author=${author}`,
